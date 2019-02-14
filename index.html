@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<title>Get the top artists and their playcounts using last.fm API</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-    <main role="main">
-        <section class="user-query-form">
-            <form>
-                <label>
-                    <input type="text" name="user-entry" class="user-search-song" required/>
-                </label>
-            </form>
-        </section>
-
-        <section class="results hidden">
-
-        </section>
-
-
-    </main>
-    <script src="index.js"></script>
+<script>
+$(document).ready(function() {
+    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=test&api_key=4a9f5581a9cdf20a699f540ac52a95c9&limit=10&format=json&callback=?", function(json) {
+        var html = '';
+        $.each(json.topartists.artist, function(i, item) {
+            html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
+        });
+        $('#result').append(html);
+    });
+});
+</script>
+<div id="result"></div>
 </body>
 </html>
