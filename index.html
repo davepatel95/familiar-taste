@@ -1,4 +1,4 @@
-<!--- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -12,40 +12,27 @@
     <main role="main">
         <section class="user-query-form">
             <form>
-                <label>
-                    <input type="text" name="user-entry" class="user-search-song" required/>
+                <label for="track-search">Track Name:
+                    <input type="text" name="track-entry" class="track-name" required/>
                 </label>
+                <label for="artist-search">Artist Name:
+                    <input type="text" name="artist-entry" class="artist-name" required/>
+                </label>
+                <label for="max-results"> Number of Results:
+                    <input type="number" name="max-results" class="max-number-results" required/>
+                </label>
+                <button type="submit" class="submit-button">Search</button>
             </form>
         </section>
 
-        <section class="results hidden">
+        <section class="results-list hidden">
 
+            <p class="error-message"></p>
         </section>
+
 
 
     </main>
     <script src="index.js"></script>
-</body>
-</html> --->
-
-<!DOCTYPE html>
-<html>
-<head>
-<title>Get the top artists and their playcounts using last.fm API</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-</head>
-<body>
-<script>
-$(document).ready(function() {
-    $.getJSON("http://ws.audioscrobbler.com/2.0/?method=user.getTopArtists&user=test&api_key=4a9f5581a9cdf20a699f540ac52a95c9&limit=10&format=json&callback=?", function(json) {
-        var html = '';
-        $.each(json.topartists.artist, function(i, item) {
-            html += "<p><a href=" + item.url + " target='_blank'>" + item.name + " - " + "Play count : " +item.playcount + "</a></p>";
-        });
-        $('#result').append(html);
-    });
-});
-</script>
-<div id="result"></div>
 </body>
 </html>
