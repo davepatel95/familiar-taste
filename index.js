@@ -2,7 +2,7 @@
 
 const API_KEY = '75ba502c93d914f57e4e196ace10f46f';
 const shared_secret = '84d016400979c15a6b086b758cffab92';
-const searchURL = 'http://ws.audioscrobbler.com/2.0/';
+const searchURL = 'https://ws.audioscrobbler.com/2.0/';
 
 function formatQueryParams(params){
     const queryItems = Object.keys(params).map(
