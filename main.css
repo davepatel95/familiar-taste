@@ -1,5 +1,20 @@
 * {
     box-sizing: content-box;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    color: white;
+}
+
+body {
+    background-image: url('http://playfusionlax.com/wp-content/uploads/2013/06/Grey-website-background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.hidden {
+    display: none;
+}
+h1 {
+    font-size: 2em;
+    text-align: center;
 }
 
 li {
@@ -9,4 +24,97 @@ li {
 .results-list > p {
     color: red;
     font-size: 18px;
+}
+
+.track-div, .artist-div, .max-results-div{
+    background: #004668;
+    border: solid 2px white;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    grid-auto-columns: auto;
+    text-align: center;
+}
+
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column: 1/5;
+    grid-row: 2;
+    grid-gap: 2%;
+    margin: 0;
+    padding: 10px;
+}
+
+.button-div {
+  display: inline-block;
+  margin: 0;
+}
+
+form > div{
+  padding: 10px;
+  margin: 5px 5%;
+}
+
+label {
+  text-align: center;
+  display: block;
+}
+
+button {
+  padding: 22px;
+  background-color: #004668;
+  border: 2px solid;
+  border-radius: 35px;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: white;
+  border: solid 2px #004668;
+  color: #004668;
+  transition: 0.6s;
+}
+button:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+input {
+  display: block;
+  margin: 5px auto auto auto;
+  padding: 10px 5px 10px 5px;
+  border: solid 2px grey;
+  border-radius: 3px;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+}
+
+.form-container > div {
+    margin: 0px 20px;
+    padding: 10px 25px;
+}
+
+.results-list {
+    margin: 5% auto;
+    text-align: center;
+    width: max-content;
+    padding: 10px;
+    background: #042451;
+    border: white 2px solid;
+    border-radius: 5px;
+}
+
+.error {
+    color: red;
+    background: none;
+}
+
+.error-message {
+    color: red;
+    font-size: 25px;
+    text-align: center;
+    margin: 5% auto;
 }

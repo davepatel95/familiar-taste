@@ -18,30 +18,32 @@ function displayResults(data) {
     console.log(data);
 
     if (data.message === 'Track not found') {
-        $('.results-list').append(
-            `<p>Sorry, Track Not Found!</p>`
+        $('.error-message').append(
+            `<p class="error">Sorry, Track Not Found!</p>`
         )
+        
     }
-
-
-    if (data.similartracks.track.length === 0) {
+    else if (data.similartracks.track.length === 0) {
         console.log(data);
-        $('.results-list').append(
-            `<p>Sorry, No Related Tracks Found!</p>`
+        $('.error-message').append(
+            `<p class="error">Sorry, No Related Tracks Found!</p>`
         )
      }
+    
 
-    for (let i = 0; i < data.similartracks.track.length; i++){
-
+    else{  
+        
+        for (let i = 0; i < data.similartracks.track.length; i++){
 
         $('.results-list').append(
-            `<li><h3><a href="${data.similartracks.track[i].url}">${data.similartracks.track[i].name}</a></h3></li>
+            `<li><h3>Track: <a href="${data.similartracks.track[i].url}">${data.similartracks.track[i].name}</a></h3></li>
             <li>Artist: ${data.similartracks.track[i].artist.name}</li>
             <li>Match: ${data.similartracks.track[i].match.toFixed(2) * 100}% </li>`
         )
-    }
+        }
 
-    $('.results-list').removeClass('hidden');
+        $('.results-list').removeClass('hidden');
+    }
 }
 
 function relatedMusicResults(artistName, trackName, maxResults = 10) {
@@ -81,6 +83,11 @@ function watchForm() {
         let maxResults = $('.max-number-results').val();
         $('.results').empty;
         relatedMusicResults(artistName, trackName, maxResults);
+
+        $('.artist-name').val('');
+        $('.track-name').val('');
+        $('.max-number-results').val('');
+        $('.error-message').empty();
     })
 }
 
