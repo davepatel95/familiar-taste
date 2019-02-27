@@ -37,7 +37,7 @@ function displayResults(data) {
 
         $('.results-list').append(
 
-            `<li><img src="${data.similartracks.track[i].image[2]['#text']}"/>
+            `<li class="album-art"><img src="${data.similartracks.track[i].image[2]['#text']}"/>
             <li><h3>Track: <a href="${data.similartracks.track[i].url}">${data.similartracks.track[i].name}</a></h3></li>
             <li>Artist: ${data.similartracks.track[i].artist.name}</li>
             <li>Match: ${data.similartracks.track[i].match.toFixed(2) * 100}% </li>`
