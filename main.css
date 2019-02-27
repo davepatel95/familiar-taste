@@ -1,13 +1,12 @@
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
     color: white;
 }
 
 body {
-    background-image: url('http://playfusionlax.com/wp-content/uploads/2013/06/Grey-website-background.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background: url('http://playfusionlax.com/wp-content/uploads/2013/06/Grey-website-background.jpg') no-repeat fixed;
+    background-size: cover;
 }
 .hidden {
     display: none;
@@ -33,17 +32,15 @@ li {
     color: white;
     display: inline-block;
     grid-auto-columns: auto;
-    text-align: center;
 }
 
 .form-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column: 1/5;
-    grid-row: 2;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap: 2%;
     margin: 0;
     padding: 10px;
+    width: 100%;
 }
 
 .button-div {
@@ -95,6 +92,8 @@ input {
 .form-container > div {
     margin: 0px 20px;
     padding: 10px 25px;
+    text-align: center;
+    width: 100%;
 }
 
 .results-list {
@@ -117,4 +116,26 @@ input {
     font-size: 25px;
     text-align: center;
     margin: 5% auto;
+}
+
+@media screen and (min-width: 320px) {
+    .form-container > div {
+      margin: auto;
+    }
+  }
+
+@media screen and (min-width: 768px) {
+    .button-div {
+      grid-column: 2; 
+    }
+
+    .form-container > div {
+      margin: 15px auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+  .form-container{
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
 }
