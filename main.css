@@ -10,6 +10,7 @@ body {
 }
 .hidden {
     display: none;
+    opacity: 0;
 }
 h1 {
     font-size: 2em;
@@ -99,7 +100,7 @@ input {
 .results-list {
     margin: 5% auto;
     text-align: center;
-    width: max-content;
+    width: 50%;
     padding: 10px;
     background: #042451;
     border: white 2px solid;
@@ -122,6 +123,9 @@ input {
     .form-container > div {
       margin: auto;
     }
+    .results-list {
+      width: 100%;
+    }
   }
 
 @media screen and (min-width: 768px) {
@@ -132,10 +136,19 @@ input {
     .form-container > div {
       margin: 15px auto;
     }
+    .results-list {
+      width: 50%;
+    }
 }
 
 @media screen and (min-width: 1024px) {
   .form-container{
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  }
+  .error {
+    font-size: 2em;
+  }
+  .results-list {
+    width: 50%;
   }
 }
