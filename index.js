@@ -15,7 +15,7 @@ function formatQueryParams(params){
 
 function displayResults(data) {
     $('.results-list').empty();
-    console.log(data);
+    console.log(data.similartracks.track[0].image[0]['#text']);
 
     if (data.message === 'Track not found') {
         $('.error-message').append(
@@ -36,7 +36,9 @@ function displayResults(data) {
         for (let i = 0; i < data.similartracks.track.length; i++){
 
         $('.results-list').append(
-            `<li><h3>Track: <a href="${data.similartracks.track[i].url}">${data.similartracks.track[i].name}</a></h3></li>
+
+            `<li><img src="${data.similartracks.track[i].image[2]['#text']}"/>
+            <li><h3>Track: <a href="${data.similartracks.track[i].url}">${data.similartracks.track[i].name}</a></h3></li>
             <li>Artist: ${data.similartracks.track[i].artist.name}</li>
             <li>Match: ${data.similartracks.track[i].match.toFixed(2) * 100}% </li>`
         )

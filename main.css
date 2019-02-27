@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-family: 'Space Mono', monospace;
     color: white;
 }
 
@@ -13,7 +13,7 @@ body {
     opacity: 0;
 }
 h1 {
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
 }
 
@@ -37,9 +37,9 @@ li {
 
 .form-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 2%;
-    margin: 0;
+    margin: auto;
     padding: 10px;
     width: 100%;
 }
@@ -88,6 +88,7 @@ input {
   font-size: 18px;
   color: black;
   text-align: center;
+  width: -webkit-fill-available;
 }
 
 .form-container > div {
@@ -128,16 +129,32 @@ input {
     }
   }
 
+@media screen and (min-width: 425px) {
+  .form-container {
+    grid-template-columns: 1fr;
+    width: 75%;
+  }
+  .results-list {
+    width: 85%;
+  }
+}
+
 @media screen and (min-width: 768px) {
     .button-div {
       grid-column: 2; 
     }
-
+    h1 {
+      font-size: 2em;
+    }
     .form-container > div {
       margin: 15px auto;
     }
     .results-list {
       width: 50%;
+    }
+    .form-container{
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      width: 100%;
     }
 }
 
@@ -150,5 +167,8 @@ input {
   }
   .results-list {
     width: 50%;
+  }
+  h1 {
+    font-size: 2em;
   }
 }
