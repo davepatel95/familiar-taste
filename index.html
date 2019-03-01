@@ -2,43 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Page Title</title>
+    <title>Familiar Taste</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link rel="icon" href="https://img.icons8.com/color/48/000000/music-record.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-            <h1 class="title">Enter a song name and the artist and find related songs!</h1>
+        <h1 class="title">Familiar Taste</h1>
+        <h2 class="sub-title">Discover related songs by entering a song and artist name!</h2>
     </header>
     <main role="main">
         <section class="user-query-form">       
-                    <form>
-                        <div class="form-container">
-                        <div class="track-div">
-                            <label for="track-search">Track Name
-                            <input type="text" name="track-entry" class="track-name" required/>
-                            </label>
-                        </div>
+            <form>
+                <div class="form-container">
+                    <div class="track-div">
+                        <label for="track-search">Track Name
+                        <input type="text" name="track-entry" class="track-name" required/>
+                        </label>
+                    </div>
 
-                        <div class="artist-div">
-                            <label for="artist-search">Artist Name
-                            <input type="text" name="artist-entry" class="artist-name" required/>
-                            </label>
-                        </div>
+                    <div class="artist-div">
+                        <label for="artist-search">Artist Name
+                        <input type="text" name="artist-entry" class="artist-name" required/>
+                        </label>
+                    </div>
 
-                        <div class="max-results-div">
-                            <label for="max-results"> Number of Results
-                            <input type="number" name="max-results" class="max-number-results" required/>
-                            </label>
-                        </div>
-                      <div class="button-div">
-                        <button type="submit" class="submit-button">Search</button>
-                      </div>                    
-                        </div>
-                    </form>
+                    <div class="max-results-div">
+                        <label for="max-results"> Number of Results
+                        <input type="number" name="max-results" class="max-number-results" max="100" min="1" required/>
+                        </label>
+                    </div>
+                    <div class="button-div">
+                    <button type="submit" class="submit-button">Search</button>
+                    </div>                    
+                </div>
+            </form>
         </section>
 
         <section>

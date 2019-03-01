@@ -15,16 +15,15 @@ function formatQueryParams(params){
 
 function displayResults(data) {
     $('.results-list').empty();
-    console.log(data.similartracks.track[0].image[0]['#text']);
-
+    /*If track is not found at all */
     if (data.message === 'Track not found') {
         $('.error-message').append(
             `<p class="error">Sorry, Track Not Found!</p>`
         )
         
     }
+    /*If track is found, but no related tracks were found */
     else if (data.similartracks.track.length === 0) {
-        console.log(data);
         $('.error-message').append(
             `<p class="error">Sorry, No Related Tracks Found!</p>`
         )
@@ -37,7 +36,7 @@ function displayResults(data) {
 
         $('.results-list').append(
 
-            `<li class="album-art"><img src="${data.similartracks.track[i].image[2]['#text']}"/>
+            `<li class="album-art"><a href="${data.similartracks.track[i].url}"><img src="${data.similartracks.track[i].image[2]['#text']}"/></a></li>
             <li><h3>Track: <a href="${data.similartracks.track[i].url}">${data.similartracks.track[i].name}</a></h3></li>
             <li>Artist: ${data.similartracks.track[i].artist.name}</li>
             <li>Match: ${data.similartracks.track[i].match.toFixed(2) * 100}% </li>`
@@ -71,7 +70,9 @@ function relatedMusicResults(artistName, trackName, maxResults = 10) {
             }
             throw new Error(response.statusText);
         })
+
         .then(data => displayResults(data))
+        
         .catch(error => {
             $('.error-message').text(`Something went wrong: ${error.message}`);
         });

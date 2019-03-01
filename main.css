@@ -7,13 +7,20 @@
 body {
     background: url('http://playfusionlax.com/wp-content/uploads/2013/06/Grey-website-background.jpg') no-repeat fixed;
     background-size: cover;
+    min-height: 100%;
+    background-color: #070e37;
 }
 .hidden {
     display: none;
     opacity: 0;
 }
 h1 {
-    font-size: 1.5em;
+  font-size: 2em;
+  font-family: 'Rubik', sans-serif;
+  text-align: center;
+}
+h2 {
+    font-size: 1em;
     text-align: center;
 }
 
@@ -131,7 +138,7 @@ input {
     .results-list {
       width: 100%;
     }
-  }
+}
 
 @media screen and (min-width: 425px) {
   .form-container {
@@ -148,7 +155,10 @@ input {
       grid-column: 2; 
     }
     h1 {
-      font-size: 2em;
+      font-size: 2.5em;
+    }
+    h2{
+      font-size: 1.5em;
     }
     .form-container > div {
       margin: 15px auto;
@@ -173,6 +183,9 @@ input {
     width: 50%;
   }
   h1 {
+    font-size: 3em;
+  }
+  h2{
     font-size: 2em;
   }
 }
