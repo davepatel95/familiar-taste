@@ -4,8 +4,9 @@
 
 ## Screenshots
 
-#### Start Screen
+#### Landing Page & Start Screen
 ![starting screen](app-start-screen.png)
+![landing page](landing-page.png)
 
 #### Results Screen
 ![results of input](results-image-1.jpg)
