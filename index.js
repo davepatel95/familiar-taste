@@ -17,6 +17,7 @@ function formatQueryParams(params){
 
 /*Renders results/error returned onto screen*/ 
 function displayResults(data) {
+    console.log(data)
     $('.results-list').empty();
     /*If track is not found at all, returns an error */
     if (data.message === 'Track not found') {
@@ -39,7 +40,7 @@ function displayResults(data) {
 
         $('.results-list').append(
 
-            `<li class="album-art"><a href="${data.similartracks.track[i].url}"><img src="${data.similartracks.track[i].image[2]['#text']}"/></a></li>
+            `<li class="album-art"><a href="${data.similartracks.track[i].url}"><img src="${data.similartracks.track[i].image[4]['#text']}"/></a></li>
             <li><h3>Track: <a href="${data.similartracks.track[i].url}">${data.similartracks.track[i].name}</a></h3></li>
             <li>Artist: ${data.similartracks.track[i].artist.name}</li>
             <li>Match: ${data.similartracks.track[i].match.toFixed(2) * 100}% </li>`
@@ -99,7 +100,15 @@ function watchForm() {
     })
 }
 
+function watchLandingPage() {
+    $('.landing-button').click(event => {
+        event.preventDefault();
+        $('.landing-page').addClass('hidden');
+    });
+}
+
 $(function() {
     console.log('App loaded. Waiting on entry');
     watchForm();
+    watchLandingPage();
 })

@@ -1,3 +1,7 @@
+body, html{
+  margin: 0;
+  padding: 0;
+}
 * {
     box-sizing: border-box;
     font-family: 'Space Mono', monospace;
@@ -5,11 +9,49 @@
 }
 
 body {
-    background: url('http://playfusionlax.com/wp-content/uploads/2013/06/Grey-website-background.jpg') no-repeat fixed;
+    background: url('http://www.glittergraphics.org/img/74/747765/techno-music-wallpaper.jpg') no-repeat fixed;
     background-size: cover;
     min-height: 100%;
     background-color: #070e37;
 }
+.landing-page{
+  width: 100%;
+  height: 100vh;
+  background-image: url('http://playfusionlax.com/wp-content/uploads/2013/06/Grey-website-background.jpg');
+  position: fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  margin: auto;
+  z-index: 10;
+}
+
+.landing-text-wrapper{
+  display: block;
+  transform: translateY(100%);
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: 150%;
+}
+
+.landing-button-div{
+  display: block;
+  transform: translateY(100%);
+}
+
+.landing-button{
+  background-color: #71549E;
+  border: 0;
+  border-radius: 7px;
+  width: 20%;
+  font-size: 120%;
+}
+
+.landing-button:hover, .landing-button:focus{
+  background-color: #2C036B;
+  color: #fff;
+  border: 1px solid white;
+}
+
 .hidden {
     display: none;
     opacity: 0;
@@ -22,6 +64,7 @@ h1 {
 h2 {
     font-size: 1em;
     text-align: center;
+    animation: step-end;
 }
 
 li {
