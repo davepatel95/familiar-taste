@@ -1,6 +1,6 @@
 # Familiar Taste
 
-[Live Site](https://davepatel95.github.io/familiar-taste-api-capstone/)
+[Live Site](https://davepatel95.github.io/familiar-taste)
 
 ## Screenshots
 
