@@ -11,7 +11,6 @@
 
 #### Results Screen
 ![results of input](results-image-1.jpg)
-![results of input](results-image-2.jpg)
 
 #### Error
 ![error messagae](error-image.png)
